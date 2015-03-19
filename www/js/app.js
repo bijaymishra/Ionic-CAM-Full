@@ -49,7 +49,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     views: {
       'tab-dash': {
         templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+        controller: 'HomeCtrl'
       }
     }
   })
@@ -79,6 +79,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
       'tab-account': {
         templateUrl: 'templates/tab-account.html',
         controller: 'AccountCtrl'
+      }
+    }
+  })
+  .state('tab.promotion', {
+    url: '/promotion',
+    views: {
+      'tab-promotion': {
+        templateUrl: 'templates/promotion.html',
+        controller: 'promotionCtrl'
       }
     }
   });

@@ -1,6 +1,6 @@
-angular.module('starter.services', [])
+angular.module('starter.services', []);
 
-.factory('Chats', function() {
+app.factory('Chats', function() {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
@@ -47,4 +47,17 @@ angular.module('starter.services', [])
       return null;
     }
   };
+});
+
+
+app.factory('myApp', function() {
+	 return {	
+	appURL : 'https://mobileapps-stg.cashamerica.com/api/V1/', //stage
+	appKey : '23B5D06B-DC43-42A4-84E2-61A531736155',
+	cat_id : "",
+	isEnv : "",
+	catname : "",
+	pro_search : "",
+	loadproduct : true,
+	 };
 });

@@ -1,28 +1,17 @@
-<ion-view view-title="Dashboard">
-  <ion-content class="padding">
-    <div class="list card">
-      <div class="item item-divider">Recent Updates</div>
-      <div class="item item-body">
-        <div>
-          There is a fire in <b>sector 3</b>
-        </div>
-      </div>
-    </div>
-    <div class="list card">
-      <div class="item item-divider">Health</div>
-      <div class="item item-body">
-        <div>
-          You ate an apple today!
-        </div>
-      </div>
-    </div>
-    <div class="list card">
-      <div class="item item-divider">Upcoming</div>
-      <div class="item item-body">
-        <div>
-          You have <b>29</b> meetings on your calendar tomorrow.
-        </div>
-      </div>
-    </div>
-  </ion-content>
+<ion-view view-title="DashBoard">
+<ion-content class="padding">
+
+<ion-slide-box on-slide-changed="slideHasChanged($index)" does-continue="true" auto-play="true" show-pager="false" ng-repeat="offer in offers">
+  <ion-slide>
+  {{offer.ImageURL}}
+	<img style="width: 100%;" src="offer.ImageURL">
+  </ion-slide>
+  </ion-slide-box>
+<div ng-click="ebay();">
+<img style="width: 100%;" src="../app/images/banner-offer-ebay.jpg" />
+</div>
+<div ng-click="national();">
+<img style="width: 100%;" src="../app/images/banner-national-deal.jpg" />
+</div>
+</ion-content>	
 </ion-view>
