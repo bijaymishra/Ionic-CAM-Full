@@ -1,17 +1,11 @@
-<ion-view view-title="DashBoard">
+<ion-view view-title="DashBoard" ng-controller="HomeCtrl">
 <ion-content class="padding">
 
-<ion-slide-box on-slide-changed="slideHasChanged($index)" does-continue="true" auto-play="true" show-pager="false" ng-repeat="offer in offers">
-  <ion-slide>
-  {{offer.ImageURL}}
-	<img style="width: 100%;" src="offer.ImageURL">
+<ion-slide-box does-continue="true" auto-play="true" show-pager="false">
+  <ion-slide ng-repeat="offer in offers">
+  	<img src="{{offer.imageURL}}">
   </ion-slide>
   </ion-slide-box>
-<div ng-click="ebay();">
-<img style="width: 100%;" src="../app/images/banner-offer-ebay.jpg" />
-</div>
-<div ng-click="national();">
-<img style="width: 100%;" src="../app/images/banner-national-deal.jpg" />
-</div>
+
 </ion-content>	
 </ion-view>

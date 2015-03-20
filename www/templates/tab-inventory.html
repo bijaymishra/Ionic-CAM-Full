@@ -1,0 +1,35 @@
+<ion-view view-title="Inventory">
+  <ion-content>
+
+<div class="search-bar">
+  <div class="item-input-wrapper">
+     <span class="search-field"><input id="id_product_search" type="text" placeholder="Search all products..." ng-model="searchItem"></span>
+    <span onclick="app.fnClearText('id_product_search','id_search_remove');" class="search-txt-remove hide" id="id_search_remove"><i class="icon icon-remove-search"></i></span>
+    <button href="javascript:void(0);" id="id_searchbtn" onclick="app.fnSearchClick();" disabled="disabled" class="button-clear"><span class="icon icon-search placeholder-icon"></span></button>
+  </div>
+</div>
+   
+  <p>Your location is: {{coords}}</p>
+	  <ion-list>
+        <div ng-repeat="st in store |filter:searchItem" ng-if="st.hasChildren == true">
+          <ion-item class="item-stable"
+                    ng-click="toggleGroup(st)"
+                    ng-class="{active: isGroupShown(st)}">
+                    <img src='img/{{st.categoryCode}}.png' class="category-image" />
+              <i class="icon rounded-icon" ng-class="isGroupShown(st) ? 'ion-minus' : 'ion-plus'"></i>
+            
+             {{st.categoryName}}
+          </ion-item>
+         <ion-item class="item-accordion"
+                    ng-repeat="item in store" ng-if="item.parentID == st.categoryCode"
+                    ng-show="isGroupShown(st)" ng-click="fnSearchProduct(); " href="#/tab/chatsDetails">
+            {{item.categoryName}}
+          </ion-item>
+        </div>
+      </ion-list>
+	  
+
+
+	
+  </ion-content>
+</ion-view>

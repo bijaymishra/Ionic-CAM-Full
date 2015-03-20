@@ -59,3 +59,8 @@ img.category-image {width: 25px;vertical-align: bottom;margin-right: 10px;}
 
 .details { color:#ffffff;}
 .signup-images{ width:20px;}
+.slider {
+  height: 200px;
+}
+.slider-pager-page i{
+}

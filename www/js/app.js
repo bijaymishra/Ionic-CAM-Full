@@ -54,21 +54,21 @@ app.config(function($stateProvider, $urlRouterProvider) {
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
+  .state('tab.inventory', {
+      url: '/inventory',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
+        'tab-inventory': {
+          templateUrl: 'templates/tab-inventory.html',
+          controller: 'InventoryCtrl'
         }
       }
     })
     .state('tab.chat-detail', {
-      url: '/chats/:chatId',
+      url: '/chatsDetails',
       views: {
-        'tab-chats': {
+        'tab-inventory': {
           templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
+          controller: 'InventoryDetailCtrl'
         }
       }
     })

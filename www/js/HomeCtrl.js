@@ -1,18 +1,13 @@
-angular.module('starter.controllers', []);
-app.controller('HomeCtrl', function($scope,myApp,$http) {
+angular.module('starter.controllers', ['ionic']);
+app.controller('HomeCtrl', function($scope,myApp,$http,$log,$ionicSlideBoxDelegate) {
 	
 	
-	var DashBoardOffer = {
-			 method: 'GET',
-			 url: myApp.appURL+"offers/rotator?key="+myApp.appKey,
-			 headers: {
-			   'Content-Type': 'json'
-			 }
-	};
 	
-	$http(DashBoardOffer).success(function(){
+	$http.get(myApp.appURL+"offers/rotator?key="+myApp.appKey).success(function(offer) {
+		$scope.offers = offer;
+		$log.info($scope.offers);
 		
-		$scope.offers = DashBoardOffer;
-		}).error(function(){alert("cors")});
+	});
+	$ionicSlideBoxDelegate.update();
 	
 });

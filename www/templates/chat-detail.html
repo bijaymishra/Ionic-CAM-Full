@@ -6,9 +6,20 @@
 -->
 <ion-view view-title="{{chat.name}}">
   <ion-content class="padding">
-    <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
-    <p>
-      {{chat.lastText}}
-    </p>
+   <ion-list>
+  <ion-item class="item">
+   <div class="panel panel-default">
+   <div class="panel-body">
+   <a onclick="app.getStoreDetail(&quot;01352&quot;,&quot;product&quot;);" href="javascript:void(0);" class="block-link"></a>
+   <h3>Pend/Charm W/Stns</h3>
+   <h4>Item #: <span>000684224472000100</span></h4>
+   <ul><li>W/G</li><li>14 KT.</li><li>SOLITAIRE</li><li>GENDER WOMANS</li><li>APPL#</li></ul>
+   <div class="panel-footer box-row"><span class="col col-60 price">$3599.99</span>
+   <span class="col distance"><i class="icon icon-location"></i>79.3 mi</span>
+   </div>
+   </div>
+   </div>
+   </ion-item>
+   </ion-list>
   </ion-content>
 </ion-view>
