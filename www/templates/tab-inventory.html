@@ -9,7 +9,7 @@
   </div>
 </div>
    
-  <p>Your location is: {{coords}}</p>
+  <p>Your location is: {{lat}} {{long}}</p>
 	  <ion-list>
         <div ng-repeat="st in store |filter:searchItem" ng-if="st.hasChildren == true">
           <ion-item class="item-stable"
@@ -22,7 +22,7 @@
           </ion-item>
          <ion-item class="item-accordion"
                     ng-repeat="item in store" ng-if="item.parentID == st.categoryCode"
-                    ng-show="isGroupShown(st)" ng-click="fnSearchProduct(); " href="#/tab/chatsDetails">
+                    ng-show="isGroupShown(st)" ng-click="fnSearchProduct(item.categoryCode,st.hasChildren);">
             {{item.categoryName}}
           </ion-item>
         </div>

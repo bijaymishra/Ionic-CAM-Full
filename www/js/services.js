@@ -10,6 +10,8 @@ app.factory('myApp', function() {
 	pro_search : "",
 	loadproduct : true,
 	latitude : '0',
-    longitude : '0'
+    longitude : '0',
+    inventoryDtls : '',	
+    productpage :'1',
 	 };
 });

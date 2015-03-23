@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-var app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.services']);
+var app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','geolocation']);
 
 app.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -63,12 +63,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
       }
     })
-    .state('tab.chat-detail', {
+    .state('tab.inventory-details', {
       url: '/chatsDetails',
       views: {
         'tab-inventory': {
           templateUrl: 'templates/chat-detail.html',
-          controller: 'InventoryDetailCtrl'
+          controller: 'InventoryCtrl'
         }
       }
     })
