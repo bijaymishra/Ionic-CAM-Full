@@ -15,8 +15,8 @@
    <h3>{{data.itemName}}</h3>
    <h4>Item #: <span>{{data.longICN}}</span></h4>
    <ul><li>{{data.details[0]}}</li><li>{{data.details[1]}}</li><li>{{data.details[2]}}</li><li>{{data.details[3]}}</li><li>APPL#</li></ul>
-   <div class="panel-footer box-row"><span class="col col-60 price">$3599.99</span>
-   <span class="col distance"><i class="icon icon-location"></i>79.3 mi</span>
+   <div class="panel-footer box-row"><span class="col col-60 price">{{data.price|currency}}</span>
+   <span class="col distance"><i class="icon icon-location"></i>{{data.distance}} mi</span>
    </div>
    </div>
    </div>
