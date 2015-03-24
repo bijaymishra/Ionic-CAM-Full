@@ -8,9 +8,7 @@
     <button href="javascript:void(0);" id="id_searchbtn" onclick="app.fnSearchClick();" disabled="disabled" class="button-clear"><span class="icon icon-search placeholder-icon"></span></button>
   </div>
 </div>
-   
-  <p>Your location is: {{lat}} {{long}}</p>
-	  <ion-list>
+    <ion-list>
         <div ng-repeat="st in store |filter:searchItem" ng-if="st.hasChildren == true">
           <ion-item class="item-stable"
                     ng-click="toggleGroup(st)"

@@ -13,5 +13,27 @@ app.factory('myApp', function() {
     longitude : '0',
     inventoryDtls : '',	
     productpage :'1',
+    search_term : ""
 	 };
+});
+
+app.factory('PersonService', function($http,myApp){
+	var items = [];
+	return {
+			GetStoreFeed: function(){
+			return $http.get(myApp.appURL+"Stores?p="+myApp.productpage+"&s=10&lat="+myApp.latitude+"&lng="+myApp.longitude+"&r=500&t="+myApp.search_term+"&key="+myApp.appKey).then(function(response){
+				items = response.data.results;
+					return items;
+					
+				});
+		
+			},
+		GetNewStoreItems: function(){
+			myApp.productpage++;
+			return $http.get(myApp.appURL+"Stores?p="+myApp.productpage+"&s=10&lat="+myApp.latitude+"&lng="+myApp.longitude+"&r=500&t="+myApp.search_term+"&key="+myApp.appKey).then(function(response){
+				items = response.data.results;
+					return items;
+			});
+		}
+	}
 });

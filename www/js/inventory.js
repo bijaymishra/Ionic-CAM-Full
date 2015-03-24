@@ -1,5 +1,5 @@
 angular.module('starter.controllers', []);
-app.controller('InventoryCtrl', function($scope,$rootScope,$state, $http, myApp, geolocation) {
+app.controller('InventoryCtrl', function($scope,$rootScope,$state, $http, myApp,PersonService) {
 	
 	$http.get(myApp.appURL + "categories?key=" + myApp.appKey).success(
 			function(stores) {
@@ -40,10 +40,23 @@ app.controller('InventoryCtrl', function($scope,$rootScope,$state, $http, myApp,
 		
 	 }; 
 	 
-	 $scope.coords = geolocation.getLocation().then(function(data){
-		 myApp.longitude = -75.1019942;// data.coords.latitude;
-			myApp.latitude = 40.6455638;//data.coords.longitude; 
-	 	
+	 
+	 
+	 /* Store List Generated.*/
+	 
+	 $rootScope.items = [];
+		
+	  PersonService.GetStoreFeed().then(function(items){
+		  $rootScope.items = items;
+		  console.log($rootScope.items);
+	  });
+	  
+	   $scope.loadMore = function(){
+	    PersonService.GetNewStoreItems().then(function(items) {
+	    	$rootScope.items = $scope.items.concat(items);
+		  
+	      $scope.$broadcast('scroll.infiniteScrollComplete');
 	    });
-	 console.dir($scope.inventoryDtls);
+	  };
+	
 });

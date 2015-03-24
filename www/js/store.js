@@ -1,6 +1,9 @@
-angular.module('starter.controllers', []);
-app.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
+
+angular.module('starter.controllers', ['ionic']);
+
+
+
+app.controller('AccountCtrl', function($rootScope,$scope, $timeout, PersonService) {
+	
 });
+

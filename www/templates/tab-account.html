@@ -1,9 +1,26 @@
-<ion-view view-title="Account">
-  <ion-content>
-    <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>
-    </ion-list>
-  </ion-content>
-</ion-view>
+<ion-view view-title="Stores"> <ion-content class="has-header has-footer store-list" ng-controller="AccountCtrl"> 
+<div class="near-you-bar" onclick="app.fnlocationChange();">
+	 <i class="icon icon-nearyou"></i>
+     <a href="javascript:void(0)" id="id_near"> Near You</a>
+</div>
+<ion-list class="item-list-search">
+<ion-item class="item" ng-repeat="item in items">
+<div class="panel panel-default">
+	<div class="panel-body">
+		<a href="javascript:void(0)" class="block-link"></a> <span
+			class="icon icon-list-arrow"></span> <span class="distance"><i
+			class="icon icon-location"></i>{{item.distance}} mi</span>
+		<h3>{{item.brand}}</h3>
+		<address>
+			{{item.address.address1}}
+			{{item.address.address2}}
+			{{item.address.state}}	
+			{{item.address.city}}
+			{{item.address.zipCode}}
+		</address>
+	</div>
+</div>
+</ion-item>
+</ion-list>
+<ion-infinite-scroll on-infinite="loadMore()" distance="5%"></ion-infinite-scroll>
+ </ion-content> </ion-view>
